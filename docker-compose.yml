@@ -1,0 +1,31 @@
+services:
+  nestjs_google_maps:
+    build: ./nestjs_google_maps
+    ports:
+      - 3000:3000
+      - 5555:5555
+    volumes:
+      - ./nestjs_google_maps:/home/node/app
+
+  front:
+    build: ./tcc_front
+    ports:
+      - 3001:3000
+    volumes:
+      - ./tcc_front:/home/node/app
+
+  db:
+    image: bitnami/mongodb:5.0.17
+    volumes:
+      - mongodb_data:/bitnami/mongodb
+    environment:
+      - MONGODB_ROOT_USER=root
+      - MONGODB_ROOT_PASSWORD=root
+      - MONGODB_REPLICA_SET_MODE=primary
+      - MONGODB_REPLICA_SET_KEY=123456
+      - MONGODB_DATABASE=nest
+      - MONGODB_REPLICA_SET_NAME=replicaset
+
+volumes:
+  mongodb_data:
+    driver: local

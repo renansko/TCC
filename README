@@ -1,0 +1,19 @@
+```bash
+
+docker compose up
+
+```
+
+### rodar ambiente no docker back para o mapa
+```bash
+
+docker compose exec nestjs_google_maps bash
+
+```
+
+### rodar ambiente no docker front
+```bash
+
+docker compose exec front bash
+
+```
