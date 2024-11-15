@@ -1,0 +1,9 @@
+[submodule "nestjs_google_maps"]
+	path = nestjs_google_maps
+	url = git@github.com:renansko/google_maps.git
+[submodule "tcc_front"]
+	path = tcc_front
+	url = git@github.com:renansko/TCC_NEXT_FRONT.git
+[submodule "tcc_node"]
+	path = tcc_node
+	url = git@github.com:renansko/TCC_MANAGEMENT_TRUCK.git
